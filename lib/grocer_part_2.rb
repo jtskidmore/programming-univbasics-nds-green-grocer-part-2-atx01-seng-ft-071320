@@ -43,7 +43,7 @@ def checkout(cart, coupons)
   end
   
   if total_price > 100
-    total_price = total_price*0.9
+    total_price = total_price*0.9.round(2)
   end
   
   total_price
