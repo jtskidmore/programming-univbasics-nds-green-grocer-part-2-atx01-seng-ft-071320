@@ -6,8 +6,14 @@ def apply_coupons(cart, coupons)
   counter = 0
   
   coupons.each do |coupon|
-    if find_item_by_ coupon[:item]
-    counter += 1
+    item = find_item_by_name_in_collection(coupon[:item], cart)
+    discounted_item_cost = coupon[:cost]/coupon[:num]
+    if item != nil
+      if item[:count] >= coupon[:num]
+        
+      end
+      counter += 1
+    end
   end
   
 end
