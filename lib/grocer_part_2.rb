@@ -3,17 +3,13 @@ require 'pry'
 
 def apply_coupons(cart, coupons)
   
-  counter = 0
-  
   coupons.each do |coupon|
     item = find_item_by_name_in_collection(coupon[:item], cart)
     
-    
-    couponed_item_name = item[:name] + "W/COUPON"
+    couponed_item_name = coupon[:item] + " W/COUPON"
     couponed_item_cost = coupon[:cost]/coupon[:num]
     couponed_item_clearance = item[:clearance]
     couponed_item_count = coupon[:num]
-    
     
     if item != nil
       if item[:count] >= coupon[:num]
@@ -22,5 +18,5 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  puts cart
+ cart
 end
